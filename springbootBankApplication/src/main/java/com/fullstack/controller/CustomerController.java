@@ -74,6 +74,12 @@ public class CustomerController {
 		return ResponseEntity.ok("All accounts deleted successfully");
 	}
 
+	@GetMapping("/findbyname/{custName}")
+	public ResponseEntity<Optional<Customer>> findByName(@PathVariable String custName){
+		return ResponseEntity.ok(customerService.findByName(custName));
+	}
+
+
 	@GetMapping("/findbyid/{custAccountId}")
 	public ResponseEntity<Optional<Customer>> findById(@PathVariable int custAccountId) {
 		return ResponseEntity.ok(customerService.findById(custAccountId));

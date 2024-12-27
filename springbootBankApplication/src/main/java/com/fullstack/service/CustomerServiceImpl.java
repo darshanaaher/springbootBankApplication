@@ -130,4 +130,7 @@ public class CustomerServiceImpl {
 		return "Transfer successful!";
 	}
 
+	public Optional<Customer> findByName(String custName) {
+		return customerRepository.findByCustName(custName);
+	}
 }
